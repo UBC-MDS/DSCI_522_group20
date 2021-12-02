@@ -24,7 +24,11 @@ opt = docopt.docopt(__doc__)
 def main(in_dir, out_dir):
     print("Start data cleaning script")
     
-    list_of_files = os.listdir(in_dir)
+    list_of_files = []
+    for f in os.listdir(in_dir):
+        if f[-3:] == "csv":
+            list_of_files.append(f)
+    
     
     # Step 1: Read in the data
 

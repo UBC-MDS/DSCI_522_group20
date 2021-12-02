@@ -1,0 +1,443 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Results &#8212; Covid Reddit Behaviour</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet">
+  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Conclusion" href="conclusion.html" />
+    <link rel="prev" title="Data Analysis" href="data_analysis.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">Covid Reddit Behaviour</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="introduction.html">
+   Introduction
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="methodology.html">
+   Methodology
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data_analysis.html">
+   Data Analysis
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Results
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="conclusion.html">
+   Conclusion
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="references.html">
+   References
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/results.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/executablebooks/jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fresults.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/results.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="results">
+<h1>Results<a class="headerlink" href="#results" title="Permalink to this headline">¶</a></h1>
+<p>For each subreddit-specific dataset of processed data we computed Wilcoxon rank-sum statistic (also referred to as the Mann-Whitney-Wilcoxon rank-sum), comparing the difference in median number of references to substance abuse per reddit-post in the ‘pre-COVID’ and ‘post-COVID’ datasets. In our test we employ Scipy stats packages’ <code class="docutils literal notranslate"><span class="pre">ranksums</span></code> method <span id="id1">[<a class="reference internal" href="references.html#id9">VGO+20</a>]</span>.</p>
+<p>According to <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.ranksums.html">Scipy documentation</a>:</p>
+<blockquote>
+<div><p>We can test the hypothesis that two independent unequal-sized samples are drawn from the same distribution with computing the Wilcoxon rank-sum statistic.</p>
+</div></blockquote>
+<p>And according to <a class="reference external" href="https://www.isixsigma.com/tools-templates/hypothesis-testing/making-sense-mann-whitney-test-median-comparison/">this ISIXSIGMA article</a></p>
+<blockquote>
+<div><p>The Mann-Whitney test compares the medians from two populations and works when the Y variable is continuous, discrete-ordinal or discrete-count, and the X variable is discrete with two attributes.</p>
+</div></blockquote>
+<p>While this test may not exactly fit our use case for reasons unknown to us - we do not have any better guidance at this point as to choosing a more well-suited test for the purpose of measuring a statistically significant difference in medians between these two datasets.</p>
+<p>Using the Wilcoxon rank-sum test, we can set up our hypotheses for this test as follows:</p>
+<p><span class="math notranslate nohighlight">\(H_0:\)</span> median number of references to substance abuse per reddit-post is the same in subreddit-specific ‘pre-COVID’ and ‘post-COVID’ datasets.</p>
+<p><span class="math notranslate nohighlight">\(H_a:\)</span> median number of references to substance abuse per reddit-post is <strong>not</strong> the same in subreddit-specific ‘pre-COVID’ and ‘post-COVID’ datasets.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="s1">&#39;../analysis&#39;</span><span class="p">)</span>
+<span class="n">results</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;stat_tests/stat_tests.csv&#39;</span><span class="p">)</span>
+<span class="n">results</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;subreddit_topic&#39;</span><span class="p">,</span> <span class="s1">&#39;test_statistic&#39;</span><span class="p">,</span> <span class="s1">&#39;p_value&#39;</span><span class="p">]</span>
+<span class="n">results</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>subreddit_topic</th>
+      <th>test_statistic</th>
+      <th>p_value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>data/processed/bipolarreddit</td>
+      <td>-0.692095</td>
+      <td>4.888776e-01</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>data/processed/EDAnonymous</td>
+      <td>1.922717</td>
+      <td>5.451560e-02</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>data/processed/socialanxiety</td>
+      <td>0.990075</td>
+      <td>3.221376e-01</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>data/processed/alcoholism</td>
+      <td>-1.407757</td>
+      <td>1.592032e-01</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>data/processed/lonely</td>
+      <td>-2.041229</td>
+      <td>4.122808e-02</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>data/processed/healthanxiety</td>
+      <td>0.184029</td>
+      <td>8.539905e-01</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>data/processed/ptsd</td>
+      <td>-0.551019</td>
+      <td>5.816208e-01</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>data/processed/suicidewatch</td>
+      <td>1.643746</td>
+      <td>1.002287e-01</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>data/processed/addiction</td>
+      <td>0.481856</td>
+      <td>6.299085e-01</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>data/processed/bpd</td>
+      <td>-0.454428</td>
+      <td>6.495209e-01</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>data/processed/autism</td>
+      <td>1.358547</td>
+      <td>1.742903e-01</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>data/processed/schizophrenia</td>
+      <td>0.246796</td>
+      <td>8.050664e-01</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>data/processed/adhd</td>
+      <td>2.955800</td>
+      <td>3.118593e-03</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>data/processed/depression</td>
+      <td>1.693505</td>
+      <td>9.035944e-02</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>data/processed/anxiety</td>
+      <td>6.492918</td>
+      <td>8.418971e-11</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Given we set a standard threshold <span class="math notranslate nohighlight">\(\alpha = 0.05\)</span> for statistical significance, the conclusions we may be able to draw from these results are:</p>
+<ul class="simple">
+<li><p>r/adhd and r/lonely saw a statistically significant difference between median number of references to substance abuse per reddit-post when comparing the ‘pre-COVID’ and ‘post-COVID’ datasets</p></li>
+<li><p>the remaining subreddits tested showed no statistically significant difference between median number of references to substance abuse per reddit-post when comparing the ‘pre-COVID’ and ‘post-COVID’ datasets.</p></li>
+</ul>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="data_analysis.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Data Analysis</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="conclusion.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Conclusion</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By Luke Collins, Mel Liow, Nobby Nguyen, Maeve Shi<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

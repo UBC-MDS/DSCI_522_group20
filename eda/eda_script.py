@@ -13,6 +13,7 @@ Options:
 # import relevant modules
 from datetime import date
 import altair as alt
+import glob
 
 import numpy as np
 import pandas as pd
@@ -50,18 +51,19 @@ def main(data_path, outputfile):
     
     for i, file in enumerate(files):
         # analysis\preprocessing\*.csv
-        df = pd.read_csv(data_path + file)
+        df = pd.read_csv(file)
         #create output images name
         name = os.path.splitext(os.path.split(data_path+file)[1])[0]
+        print(name)
         name_hist = name + '_histogram.png'
         name_line = name + '_line.png'
         #get the distribution of the target feature
-        histograms(df, outputfile)
+        histograms(df, outputfile, name_hist)
         #get the time series plot of the target feature
-        create_timeseries(df, outputfile)
+        create_timeseries(df, outputfile, name_line)
 
 
-def histograms(data, outputfile):
+def histograms(data, outputfile, name_hist):
     """
     create histograms of given features to obtain the distribution 
     to see the difference before and after the pandamic,
@@ -85,7 +87,7 @@ def histograms(data, outputfile):
     #save the file
     save(hist, outputfile + name_hist)
 
-def create_timeseries(data, outputfile):
+def create_timeseries(data, outputfile, name_line):
     """
     create time on the x axis and number of substance_use_total on the y-axis, 
     to see the trend over time, then save the figures as png file to the outputfile location.

@@ -38,13 +38,14 @@ def main(data_path, output_file):
     None
     """
     # read the datasets
+    # print(glob.glob(data_path + '/*.csv'))
     preprocessed_data_files = [datafile.split('\\')[-1] for datafile in glob.glob(data_path + '/*.csv')] # '..\..\data\*.csv'
     files = [x for x in preprocessed_data_files]
 
     results = {}
     for i, file in enumerate(files):
         # analysis\preprocessing\*.csv
-        df = pd.read_csv(data_path + file)
+        df = pd.read_csv(file)
         pre = df.loc[df['period'] == 'pre']['substance_use_total']
         post = df.loc[df['period'] == 'post']['substance_use_total']
         test_statistic, p_val = ranksums(pre, post, alternative='two-sided')
